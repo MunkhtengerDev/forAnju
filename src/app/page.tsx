@@ -63,6 +63,39 @@ export default function Home() {
           className="w-32 h-32 transform transition-transform duration-1000 ease-in-out animate-bounce"
         />
       </div>
+
+      <style jsx>{`
+        @keyframes catDance {
+          0% {
+            transform: translateY(0) rotate(0);
+          }
+          50% {
+            transform: translateY(-20px) rotate(15deg);
+          }
+          100% {
+            transform: translateY(0) rotate(-15deg);
+          }
+        }
+
+        .cat-animation {
+          animation: catDance 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+          0% {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-200px) scale(1.5);
+            opacity: 0;
+          }
+        }
+
+        .animate-float {
+          animation: float 4s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }
