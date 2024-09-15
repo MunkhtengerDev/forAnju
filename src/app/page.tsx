@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import TypingEffect from "react-typing-effect";
-
 
 export default function Home() {
   const [showHearts, setShowHearts] = useState(false);
@@ -15,7 +15,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-center">
+    <div className="relative flex flex-col justify-center items-center h-screen bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-center">
       <TypingEffect
         text={[
           "Hey there, beautiful...",
@@ -28,8 +28,6 @@ export default function Home() {
         typingDelay={500}
         className="text-4xl font-semibold text-white mb-8"
       />
-
-     
 
       <button
         onClick={handleButtonClick}
@@ -56,22 +54,15 @@ export default function Home() {
         </div>
       )}
 
-      <style jsx>{`
-        @keyframes float {
-          0% {
-            transform: translateY(0) scale(1);
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(-200px) scale(1.5);
-            opacity: 0;
-          }
-        }
-
-        .animate-float {
-          animation: float 4s ease-in-out infinite;
-        }
-      `}</style>
+      <div className="absolute bottom-0 w-full flex justify-center items-center">
+        <Image
+          src="/png-transparent-cat-kitten-cartoon-adorable-artwork-kawaii-kitty-fluffy-happy-paw-removebg-preview.png" // Path to your cat image
+          alt="Cat Animation"
+          width={150} // Set the width of the image
+          height={150} // Set the height of the image
+          className="w-32 h-32 transform transition-transform duration-1000 ease-in-out animate-bounce"
+        />
+      </div>
     </div>
   );
 }
