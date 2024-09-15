@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import TypingEffect from "react-typing-effect";
 
 export default function Home() {
