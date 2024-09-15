@@ -3,6 +3,7 @@
 import { useState } from "react";
 import TypingEffect from "react-typing-effect";
 
+
 export default function Home() {
   const [showHearts, setShowHearts] = useState(false);
 
@@ -10,18 +11,17 @@ export default function Home() {
     setShowHearts(true);
     setTimeout(() => {
       setShowHearts(false);
-    }, 4000); // Hearts disappear after 4 seconds
+    }, 4000); 
   };
 
   return (
     <div className="flex flex-col justify-center items-center h-screen bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-center">
-      {/* Typing Effect for Personal Message */}
       <TypingEffect
         text={[
           "Hey there, beautiful...",
-          "I've made something special just for you <3",
-          "Will you go out with me?",
-          "I can't wait to see you!",
+          "I've made this only for you<3",
+          "Will you have coffee with me?",
+          "Tell me whenever you're ready, and I'll be there for you",
         ]}
         speed={100}
         eraseSpeed={50}
@@ -29,7 +29,8 @@ export default function Home() {
         className="text-4xl font-semibold text-white mb-8"
       />
 
-      {/* Button to Trigger Hearts Animation */}
+     
+
       <button
         onClick={handleButtonClick}
         className="mt-6 px-6 py-3 bg-[#D95F59] text-[#522258] font-bold text-xl rounded-full shadow-lg hover:bg-[#522258] hover:text-[#D95F59] transition-all duration-300"
@@ -37,7 +38,6 @@ export default function Home() {
         For You, Anju 
       </button>
 
-      {/* Floating Hearts */}
       {showHearts && (
         <div className="absolute inset-0 flex justify-center items-center">
           {[...Array(10)].map((_, i) => (
